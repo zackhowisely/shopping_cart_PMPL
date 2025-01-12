@@ -150,3 +150,9 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/products'
+
+ACCOUNT_LOGOUT_REDIRECT_URL ="/accounts/login"
+
+TEST_RUNNER = 'xmlrunner.extra.djangotestrunner.XMLTestRunner'
+
+TEST_OUTPUT_FILE_NAME = 'coverage.xml'
