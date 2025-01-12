@@ -976,3 +976,21 @@ table#change-history tbody th {
 .popup #header {
     padding: 10px 20px;
 }
+
+.navbar .left, .navbar .right {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
