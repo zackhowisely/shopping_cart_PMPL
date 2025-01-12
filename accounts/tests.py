@@ -7,7 +7,7 @@ from products.models import Product
 # Create your tests here.
 class ProfileTestCase(TestCase):
     def setUp(self):
-        self.testuser = get_user_model().objects.create_user(username='testuser',password='123')
+        self.testuser = get_user_model().objects.create_user(username='testuser')
         self.client.force_login(self.testuser)
 
     def test_profile_is_created(self):

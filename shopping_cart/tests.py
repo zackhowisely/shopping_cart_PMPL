@@ -12,7 +12,7 @@ from shopping_cart.extras import generate_order_id
 class ShoppingCartTestCase(TestCase):
     def setUp(self):
         self.producttest = Product.objects.create(name='book 1',price=10000)
-        self.testuser = get_user_model().objects.create_user(username='testuser',password='123')
+        self.testuser = get_user_model().objects.create_user(username='testuser')
         self.profile = Profile.objects.get(user=self.testuser)
         self.testorderitem = OrderItem.objects.create(product=self.producttest)
         self.user_order= Order.objects.create(owner=self.profile, is_ordered=False)

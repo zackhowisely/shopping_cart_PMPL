@@ -11,7 +11,7 @@ from accounts.models import Profile
 class ProductTestCase(TestCase):
     def setUp(self):
         self.producttest = Product.objects.create(name='book 1',price=10000)
-        self.testuser = get_user_model().objects.create_user(username='testuser',password='123')
+        self.testuser = get_user_model().objects.create_user(username='testuser')
         self.profile = Profile.objects.get(user=self.testuser)
         self.user_order= Order.objects.get_or_create(owner=self.profile, is_ordered=False)
 
