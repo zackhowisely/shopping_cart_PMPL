@@ -1,8 +1,7 @@
-from django.shortcuts import render,redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from shopping_cart.models import Order
 from .models import Profile
-from django.urls import reverse
 
 @login_required
 def my_profile(request):
@@ -13,8 +12,3 @@ def my_profile(request):
 	}
 
 	return render(request, "profile.html", context)
-
-def login():
-	
-	return redirect('accounts:account_login')
-

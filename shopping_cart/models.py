@@ -41,7 +41,7 @@ class Transaction(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def __str__(self):
-        return self.order_id
+        return str(self.order_id)
 
     class Meta:
         ordering = ['-timestamp']
