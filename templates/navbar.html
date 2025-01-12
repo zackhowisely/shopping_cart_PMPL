@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <div class="left">
+        <a href="{% url 'products:product-list' %}" class="nav-link">Shop</a>
+        <a href="{% url 'shopping_cart:order_summary' %}" class="nav-link">Cart</a>
+    </div>
+    <div class="right">
+        <a href="{% url 'accounts:my_profile' %}" class="nav-link">Profile</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'account_logout' %}" class="nav-link">Logout</a>
+        {% endif %}
+    </div>
+</nav>
