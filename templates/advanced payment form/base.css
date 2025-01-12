@@ -69,6 +69,8 @@ body {
   text-rendering: optimizeLegibility;
   font-feature-settings: "pnum";
   font-variant-numeric: proportional-nums;
+  overflow-x: hidden;
+  background-color: #f6f9fc;
 }
 
 .globalContent {
@@ -264,10 +266,6 @@ body {
   }
 }
 
-body {
-  overflow-x: hidden;
-  background-color: #f6f9fc;
-}
 
 main {
   position: relative;

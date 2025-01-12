@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  var elements = stripe.elements({
+  let elements = stripe.elements({
     fonts: [
       {
         cssSrc: "https://rsms.me/inter/inter-ui.css"
@@ -16,7 +16,7 @@
   /**
    * Card Element
    */
-  var card = elements.create("card", {
+  let card = elements.create("card", {
     style: {
       base: {
         color: "#32325D",
@@ -40,7 +40,7 @@
   /**
    * Payment Request Element
    */
-  var paymentRequest = stripe.paymentRequest({
+  let paymentRequest = stripe.paymentRequest({
     country: "US",
     currency: "usd",
     total: {
@@ -49,13 +49,13 @@
     }
   });
   paymentRequest.on("token", function(result) {
-    var example = document.querySelector(".example4");
+    let example = document.querySelector(".example4");
     example.querySelector(".token").innerText = result.token.id;
     example.classList.add("submitted");
     result.complete("success");
   });
 
-  var paymentRequestElement = elements.create("paymentRequestButton", {
+  let paymentRequestElement = elements.create("paymentRequestButton", {
     paymentRequest: paymentRequest,
     style: {
       paymentRequestButton: {

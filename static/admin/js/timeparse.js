@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var timeParsePatterns = [
+    let timeParsePatterns = [
         // 9
         {
             re: /^\d{1,2}$/i,
@@ -30,7 +30,7 @@
         {
             re: /^(\d+)\s*([ap])(?:.?m.?)?$/i,
             handler: function(bits) {
-                var hour = parseInt(bits[1]);
+                let hour = parseInt(bits[1]);
                 if (hour === 12) {
                     hour = 0;
                 }
@@ -52,8 +52,8 @@
         {
             re: /^(\d+)[.:](\d{2})\s*([ap]).?m.?$/i,
             handler: function(bits) {
-                var hour = parseInt(bits[1]);
-                var mins = parseInt(bits[2]);
+                let hour = parseInt(bits[1]);
+                let mins = parseInt(bits[2]);
                 if (mins < 10) {
                     mins = '0' + mins;
                 }
@@ -91,10 +91,10 @@
     ];
 
     function parseTimeString(s) {
-        for (var i = 0; i < timeParsePatterns.length; i++) {
-            var re = timeParsePatterns[i].re;
-            var handler = timeParsePatterns[i].handler;
-            var bits = re.exec(s);
+        for (let i = 0; i < timeParsePatterns.length; i++) {
+            let re = timeParsePatterns[i].re;
+            let handler = timeParsePatterns[i].handler;
+            let bits = re.exec(s);
             if (bits) {
                 return handler(bits);
             }

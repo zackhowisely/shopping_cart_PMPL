@@ -116,6 +116,6 @@ def update_transaction_records(request):
     return redirect(reverse('accounts:my_profile'))
 
 
-def success(request, **kwargs):
+def success(request):
     # a view signifying the transcation was successful
     return render(request, 'shopping_cart/purchase_success.html', {})

@@ -1,8 +1,8 @@
 // Core javascript helper functions
 
 // basic browser identification & version
-var isOpera = (navigator.userAgent.indexOf("Opera") >= 0) && parseFloat(navigator.appVersion);
-var isIE = ((document.all) && (!isOpera)) && parseFloat(navigator.appVersion.split("MSIE ")[1].split(";")[0]);
+let isOpera = (navigator.userAgent.indexOf("Opera") >= 0) && parseFloat(navigator.appVersion);
+let isIE = ((document.all) && (!isOpera)) && parseFloat(navigator.appVersion.split("MSIE ")[1].split(";")[0]);
 
 // Cross-browser event handlers.
 function addEvent(obj, evType, fn) {
@@ -11,7 +11,7 @@ function addEvent(obj, evType, fn) {
         obj.addEventListener(evType, fn, false);
         return true;
     } else if (obj.attachEvent) {
-        var r = obj.attachEvent("on" + evType, fn);
+        let r = obj.attachEvent("on" + evType, fn);
         return r;
     } else {
         return false;
@@ -45,13 +45,13 @@ function cancelEventPropagation(e) {
 // quickElement(tagType, parentReference [, textInChildNode, attribute, attributeValue ...]);
 function quickElement() {
     'use strict';
-    var obj = document.createElement(arguments[0]);
+    let obj = document.createElement(arguments[0]);
     if (arguments[2]) {
-        var textNode = document.createTextNode(arguments[2]);
+        let textNode = document.createTextNode(arguments[2]);
         obj.appendChild(textNode);
     }
-    var len = arguments.length;
-    for (var i = 3; i < len; i += 2) {
+    let len = arguments.length;
+    for (let i = 3; i < len; i += 2) {
         obj.setAttribute(arguments[i], arguments[i + 1]);
     }
     arguments[1].appendChild(obj);
@@ -72,7 +72,7 @@ function removeChildren(a) {
 // ----------------------------------------------------------------------------
 function findPosX(obj) {
     'use strict';
-    var curleft = 0;
+    let curleft = 0;
     if (obj.offsetParent) {
         while (obj.offsetParent) {
             curleft += obj.offsetLeft - ((isOpera) ? 0 : obj.scrollLeft);
@@ -90,7 +90,7 @@ function findPosX(obj) {
 
 function findPosY(obj) {
     'use strict';
-    var curtop = 0;
+    let curtop = 0;
     if (obj.offsetParent) {
         while (obj.offsetParent) {
             curtop += obj.offsetTop - ((isOpera) ? 0 : obj.scrollTop);
@@ -112,7 +112,7 @@ function findPosY(obj) {
 (function() {
     'use strict';
     Date.prototype.getTwelveHours = function() {
-        var hours = this.getHours();
+        let hours = this.getHours();
         if (hours === 0) {
             return 12;
         }
@@ -160,7 +160,7 @@ function findPosY(obj) {
     };
 
     Date.prototype.strftime = function(format) {
-        var fields = {
+        let fields = {
             B: this.getFullMonthName(),
             c: this.toString(),
             d: this.getTwoDigitDate(),
@@ -177,7 +177,7 @@ function findPosY(obj) {
             Y: '' + this.getFullYear(),
             '%': '%'
         };
-        var result = '', i = 0;
+        let result = '', i = 0;
         while (i < format.length) {
             if (format.charAt(i) === '%') {
                 result = result + fields[format.charAt(i + 1)];
@@ -195,18 +195,18 @@ function findPosY(obj) {
 // String object extensions
 // ----------------------------------------------------------------------------
     String.prototype.pad_left = function(pad_length, pad_string) {
-        var new_string = this;
-        for (var i = 0; new_string.length < pad_length; i++) {
+        let new_string = this;
+        for (let i = 0; new_string.length < pad_length; i++) {
             new_string = pad_string + new_string;
         }
         return new_string;
     };
 
     String.prototype.strptime = function(format) {
-        var split_format = format.split(/[.\-/]/);
-        var date = this.split(/[.\-/]/);
-        var i = 0;
-        var day, month, year;
+        let split_format = format.split(/[.\-/]/);
+        let date = this.split(/[.\-/]/);
+        let i = 0;
+        let day, month, year;
         while (i < split_format.length) {
             switch (split_format[i]) {
                 case "%d":
@@ -236,7 +236,7 @@ function findPosY(obj) {
 // ----------------------------------------------------------------------------
 function getStyle(oElm, strCssRule) {
     'use strict';
-    var strValue = "";
+    let strValue = "";
     if(document.defaultView && document.defaultView.getComputedStyle) {
         strValue = document.defaultView.getComputedStyle(oElm, "").getPropertyValue(strCssRule);
     }
