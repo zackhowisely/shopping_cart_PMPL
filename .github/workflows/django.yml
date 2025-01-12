@@ -28,3 +28,7 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+    - name: SonarQube Scan
+      uses: SonarSource/sonarqube-scan-action@v4
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
