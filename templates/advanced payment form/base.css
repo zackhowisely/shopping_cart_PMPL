@@ -154,7 +154,7 @@ body {
 }
 
 .common-Link--arrow:after {
-  font: normal 16px StripeIcons;
+  font: normal 16px StripeIcons, sans-serif;
   content: "\2192";
   padding-left: 5px;
 }
