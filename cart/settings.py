@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'stripe',
 
     'accounts',
     'products',
@@ -139,21 +138,6 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 
-
-# Stripe and Braintree Settings
-
-if DEBUG:
-    # test keys
-    STRIPE_PUBLISHABLE_KEY = ''
-    STRIPE_SECRET_KEY = ''
-    BT_ENVIRONMENT='sandbox'
-    BT_MERCHANT_ID='YOUR BT_MERCHANT_ID'
-    BT_PUBLIC_KEY='YOUR BT_PUBLIC_KEY'
-    BT_PRIVATE_KEY='YOUR BT_PRIVATE_KEY'
-else:
-    # live keys
-    STRIPE_PUBLISHABLE_KEY = 'YOUR STRIPE LIVE PUB KEY'
-    STRIPE_SECRET_KEY = 'YOUR STRIPE LIVE SECRET KEY'
 
 
 # Django AllAuth Settings

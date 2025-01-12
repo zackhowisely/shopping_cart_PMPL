@@ -17,6 +17,6 @@ urlpatterns = [
     url(r'^success/$', success, name='purchase_success'),
     url(r'^item/delete/(?P<item_id>[-\w]+)/$', delete_from_cart, name='delete_item'),
     url(r'^checkout/$', checkout, name='checkout'),
-    url(r'^update-transaction/(?P<token>[-\w]+)/$', update_transaction_records,
+    url(r'^update-transaction/$', update_transaction_records,
         name='update_records')
 ]
